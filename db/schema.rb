@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110607225623) do
+ActiveRecord::Schema.define(:version => 20110608203738) do
+
+  create_table "critterposts", :force => true do |t|
+    t.text     "content",    :null => false
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                                 :null => false

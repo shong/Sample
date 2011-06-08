@@ -951,3 +951,8 @@ div.pagescontainer {
 
 .clear {
   clear: both; }
+
+html {
+  background: url("../images/brushed_alu.png") repeat; }
+  html body {
+    background: none; }

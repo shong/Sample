@@ -1,1 +1,8 @@
 @import 'reset', 'grid960', 'type', 'forms', 'tables', 'ux', 'helpers';
+
+html {
+  background: url('../images/brushed_alu.png') repeat;
+  body {
+    background: none;
+  }
+}

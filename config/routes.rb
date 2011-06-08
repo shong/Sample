@@ -1,6 +1,8 @@
 EYSampleApp::Application.routes.draw do
-  devise_for :users
-
+  devise_for :users, :path => "accounts"
+  resources :users do
+    resources :critterposts
+  end
   get "pages/index"
 
   root :to => "Pages#index"

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @critterpost.content %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @critterpost.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_critterpost_path(current_user, @critterpost) %> |
+<%= link_to 'Back', user_critterposts_path(current_user) %>
