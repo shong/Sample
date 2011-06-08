@@ -8,6 +8,7 @@ gem 'rake', '0.8.7'
 
 gem 'mysql2', '0.2.7'
 gem 'devise'
+gem 'sass'
 
 group :development, :test do
   gem 'capybara', '1.0.0.rc1'

@@ -2,18 +2,19 @@
 <html>
   <head>
     <title>EYSampleApp</title>
-    <%= stylesheet_link_tag :all %>
+    <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    <% if notice %>
-      <p class='success'><%= notice %></p>
-    <% elsif alert %>
-      <p class='error'><%= alert %></p>
-    <% end %>
-    <%= yield %>
-
+    <div id='container'>
+      <%= link_to 'Sign up', new_user_registration_path %>
+      <% if notice %>
+        <p class='success'><%= notice %></p>
+      <% elsif alert %>
+        <p class='error'><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
