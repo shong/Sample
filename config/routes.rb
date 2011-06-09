@@ -1,7 +1,9 @@
 EYSampleApp::Application.routes.draw do
+  get "users/show"
+
   devise_for :users, :path => "accounts"
   resources :users do
-    resources :critterposts
+    resources :critterposts, :only => [:index, :show, :new, :create, :destroy]
   end
   get "pages/index"
 

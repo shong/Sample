@@ -8,15 +8,39 @@
   </head>
   <body>
     <div id='container'>
-      <% if current_user %>
-        <%= link_to 'Sign out', destroy_user_session_path %>
-      <% end %>
-      <% if notice %>
-        <p class='success'><%= notice %></p>
-      <% elsif alert %>
-        <p class='error'><%= alert %></p>
-      <% end %>
-      <%= yield %>
+      <div id='content_wrap'>
+        <header>
+          <section class='obj_right'>
+            <% if current_user %>
+              Signed in as <%= link_to current_user.username, current_user, :title => "View Profile" %>
+              //
+              <%= link_to "New Critter", new_user_critterpost_path(current_user) %>
+              //
+              <%= link_to 'Sign out', destroy_user_session_path %>
+            <% else %>
+              <%= link_to 'Sign in', new_user_session_path %>
+              //
+              <%= link_to 'Register', new_user_registration_path %>
+            <% end %>
+          </section>
+          <section class='obj_left'>
+            <h1 id='logo'><%= link_to "critter", root_path %></h1>
+          </section>
+        </header>
+        <section class='clear' id='content'>
+          <section id='critterpost_section'>
+            <% if notice %>
+              <p class='success'><%= notice %></p>
+            <% elsif alert %>
+              <p class='error'><%= alert %></p>
+            <% end %>
+            <%= yield %>
+          </section>
+        </section>
+      </div>
+      <footer class='clear'>
+        <p>&copy;<%= Time.now.year %> Engine Yard, Inc.</p>
+      </footer>
     </div>
   </body>
 </html>

@@ -10,6 +10,7 @@ gem 'escape_utils'
 gem 'mysql2', '0.2.7'
 gem 'devise'
 gem 'sass'
+gem 'gravatar_image_tag', '1.0.0.pre2'
 
 group :development, :test do
   gem 'capybara', '1.0.0.rc1'

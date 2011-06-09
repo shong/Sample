@@ -1,17 +1,25 @@
-<h2>Sign in</h2>
-
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :username %><br />
-  <%= f.text_field :username %></p>
-
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
-
-  <p><%= f.submit "Sign in" %></p>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "vertical_form"}) do |f| %>
+  <fieldset class='third'>
+    <legend>Sign in</legend>
+    <ul>
+      <li>
+        <%= f.label :username %>
+        <%= f.text_field :username, :class => "requiredfield" %>
+      </li>
+      <li>
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => "requiredfield" %>
+      </li>
+      <li>
+        <% if devise_mapping.rememberable? -%>
+          <%= f.check_box :remember_me, :class => "obj_left" %> <%= f.label :remember_me %>
+        <% end -%>
+      </li>
+      <li>
+        <%= f.submit "Sign in", :class => "blue styled_button" %>
+        <%= render :partial => "devise/shared/links" %>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>

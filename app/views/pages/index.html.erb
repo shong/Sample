@@ -1,18 +1,11 @@
-<% if current_user %>
-  <%= link_to 'New Critterpost', new_user_critterpost_path(current_user) %>
-<% else %>
-  <%= link_to 'Sign in', new_user_session_path %>
-  |
-  <%= link_to 'Sign up', new_user_registration_path %>
-<% end %>
 <% @critterposts.each do |critterpost| %>
   <div class='critterpost'>
     <div class='critterpost_content'>
       <%= critterpost.content %>
     </div>
-    <p>
+    <div class='critter_author'>
       Crittered <%= time_ago_in_words(critterpost.created_at) %> ago.
       <%= link_to "@#{critterpost.user.username}", critterpost.user %>
-    </p>
+    </div>
   </div>
 <% end %>
