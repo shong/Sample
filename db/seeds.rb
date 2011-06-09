@@ -5,7 +5,13 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-user = User.create(:username => "engineyard", :email => "pandas@engineyard.com",
+unless User.find_by_username("engineyard")
+  user = User.create(:username => "engineyard", :email => "pandas@engineyard.com",
                    :password => "3Ycritter", :password_confirmation => "3Ycritter")
-Critterpost.create(:content => "AWESOME!! You just deployed the greatest app, Critter, on the best platform, Engine Yard! Welcome to the cloud!",
+end
+if Critterpost.find_by_content("AWESOME!! You just deployed the greatest app, Critter, on the best platform, Engine Yard! Welcome to the cloud!")
+  puts "Database already seeded"
+else
+  Critterpost.create(:content => "AWESOME!! You just deployed the greatest app, Critter, on the best platform, Engine Yard! Welcome to the cloud!",
                    :user_id => user)
+end
