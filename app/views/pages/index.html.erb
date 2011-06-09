@@ -1,11 +1,15 @@
 <% @critterposts.each do |critterpost| %>
   <div class='critterpost'>
+    <div class='user_gravatar'>
+      <%= gravatar_image_tag critterpost.user.email, :gravatar => {:size => 50} %>
+    </div>
     <div class='critterpost_content'>
+      <%= link_to "@#{critterpost.user.username}", critterpost.user, :class => "username" %>
+      <br />
       <%= critterpost.content %>
     </div>
     <div class='critter_author'>
       Crittered <%= time_ago_in_words(critterpost.created_at) %> ago.
-      <%= link_to "@#{critterpost.user.username}", critterpost.user %>
     </div>
   </div>
 <% end %>

@@ -964,7 +964,11 @@ html {
         html body #container header #logo {
           color: #1475a2;
           font-size: 54px;
-          text-shadow: 1px 1px 2px #333; }
+          line-height: 36px;
+          padding-top: 10px;
+          text-shadow: 1px 1px 2px #333;
+          text-align: right;
+          width: 150px; }
           html body #container header #logo a:hover {
             color: #1475a2; }
       html body #container #content_wrap {
@@ -977,6 +981,11 @@ html {
           min-height: 500px;
           padding-top: 5px;
           width: 705px; }
+          html body #container #content #critterpost_section .user_gravatar {
+            float: left;
+            padding-right: 5px; }
+          html body #container #content #critterpost_section .username {
+            font-weight: bold; }
           html body #container #content #critterpost_section .critterpost {
             background-color: rgba(20, 117, 162, 0.2);
             margin: 10px auto;

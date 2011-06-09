@@ -14,7 +14,11 @@ html {
         #logo {
           color: #1475a2;
           font-size: 54px;
+          line-height: 36px;
+          padding-top: 10px;
           text-shadow: 1px 1px 2px #333;
+          text-align: right;
+          width: 150px;
           a:hover {
             color: #1475a2;
           }
@@ -31,6 +35,13 @@ html {
           min-height: 500px;
           padding-top: 5px;
           width: 705px;
+          .user_gravatar {
+            float: left;
+            padding-right: 5px;
+          }
+          .username {
+            font-weight: bold;
+          }
           .critterpost {
             background-color: rgba(20, 117, 162, .2);
             margin: 10px auto;
