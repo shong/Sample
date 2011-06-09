@@ -1,2 +1,11 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% @critterposts.each do |critterpost| %>
+  <div class='critterpost'>
+    <div class='critterpost_content'>
+      <%= critterpost.content %>
+    </div>
+    <div class='critter_author'>
+      Crittered <%= time_ago_in_words(critterpost.created_at) %> ago.
+      <%= link_to "@#{critterpost.user.username}", critterpost.user %>
+    </div>
+  </div>
+<% end %>

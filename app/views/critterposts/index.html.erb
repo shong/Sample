@@ -1,0 +1,25 @@
+<h1>Listing critterposts</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% current_user.critterposts.each do |critterpost| %>
+  <tr>
+    <td><%= critterpost.content %></td>
+    <td><%= critterpost.user_id %></td>
+    <td><%= link_to 'Show', critterpost %></td>
+    <td><%= link_to 'Edit', edit_user_critterpost_path(current_user, critterpost) %></td>
+    <td><%= link_to 'Destroy', [current_user, critterpost], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Critterpost', new_user_critterpost_path(current_user) %>

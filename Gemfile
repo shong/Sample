@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.8'
 gem 'rake', '0.8.7'
+gem 'escape_utils'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,6 +10,7 @@ gem 'rake', '0.8.7'
 gem 'mysql2', '0.2.7'
 gem 'devise'
 gem 'sass'
+gem 'gravatar_image_tag', '1.0.0.pre2'
 
 group :development, :test do
   gem 'capybara', '1.0.0.rc1'

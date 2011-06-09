@@ -1,0 +1,9 @@
+<div class='critterpost'>
+  <div class='critterpost_content'>
+    <%= critterpost.content %>
+  </div>
+  <p>
+    <%= time_ago_in_words(critterpost.created_at) %>
+    <%= link_to "@#{critterpost.user.username}", critterpost.user %>
+  </p>
+</div>
