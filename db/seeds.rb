@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+user = User.create(:username => "engineyard", :email => "pandas@engineyard.com",
+                   :password => "3Ycritter", :password_confirmation => "3Ycritter")
+Critterpost.create(:content => "AWESOME!! You just deployed the greatest app, Critter, on the best platform, Engine Yard! Welcome to the cloud!",
+                   :user_id => user)
